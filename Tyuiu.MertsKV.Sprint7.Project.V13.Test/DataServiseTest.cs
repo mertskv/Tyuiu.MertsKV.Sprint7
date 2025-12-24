@@ -1,6 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Xml.Linq;
-using Tyuiu.MertsKV.Sprint7.Project.V13.Lib;
+﻿using Tyuiu.MertsKV.Sprint7.Project.V13.Lib;
 namespace Tyuiu.MertsKV.Sprint7.Project.V13.Test
 {
     [TestClass]
