@@ -486,7 +486,7 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13
             buttonDelete_MKV.Name = "buttonDelete_MKV";
             buttonDelete_MKV.Size = new Size(69, 58);
             buttonDelete_MKV.TabIndex = 1;
-            toolTip_MKV.SetToolTip(buttonDelete_MKV, "Очистить поле");
+            toolTip_MKV.SetToolTip(buttonDelete_MKV, "Удалить");
             buttonDelete_MKV.UseVisualStyleBackColor = false;
             buttonDelete_MKV.Click += buttonDelete_MKV_Click;
             buttonDelete_MKV.MouseEnter += buttonDelete_MKV_MouseEnter;
@@ -507,10 +507,10 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13
             // 
             // textBoxOne_MKV
             // 
-            textBoxOne_MKV.BackColor = SystemColors.HighlightText;
+            textBoxOne_MKV.BackColor = SystemColors.Control;
             textBoxOne_MKV.BorderStyle = BorderStyle.FixedSingle;
             textBoxOne_MKV.Cursor = Cursors.IBeam;
-            textBoxOne_MKV.ForeColor = SystemColors.Control;
+            textBoxOne_MKV.ForeColor = SystemColors.Desktop;
             textBoxOne_MKV.Location = new Point(12, 26);
             textBoxOne_MKV.Multiline = true;
             textBoxOne_MKV.Name = "textBoxOne_MKV";
