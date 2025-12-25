@@ -69,13 +69,6 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13
             buttonSearch_MKV = new Button();
             textBoxOne_MKV = new TextBox();
             dataGridViewGeography_MKV = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
-            Column6 = new DataGridViewTextBoxColumn();
-            Column7 = new DataGridViewTextBoxColumn();
             openFileDialogProject_MKV = new OpenFileDialog();
             toolTip_MKV = new ToolTip(components);
             ((System.ComponentModel.ISupportInitialize)splitContainer_MKV).BeginInit();
@@ -137,6 +130,7 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13
             toolTip_MKV.SetToolTip(buttonInfo_MKV, "Дополнительная информаци о приложении");
             buttonInfo_MKV.UseVisualStyleBackColor = true;
             buttonInfo_MKV.Click += buttonInfo_MKV_Click;
+            buttonInfo_MKV.MouseEnter += buttonInfo_MKV_MouseEnter;
             // 
             // buttonHelp_MKV
             // 
@@ -151,6 +145,7 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13
             toolTip_MKV.SetToolTip(buttonHelp_MKV, "Просмотреть данные о руководстве");
             buttonHelp_MKV.UseVisualStyleBackColor = true;
             buttonHelp_MKV.Click += buttonHelp_MKV_Click;
+            buttonHelp_MKV.MouseEnter += buttonHelp_MKV_MouseEnter;
             // 
             // groupBoxFilter_MKV
             // 
@@ -249,6 +244,7 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13
             toolTip_MKV.SetToolTip(buttonDeleteCountry_MKV, "Удалить страну");
             buttonDeleteCountry_MKV.UseVisualStyleBackColor = true;
             buttonDeleteCountry_MKV.Click += buttonDeleteCountry_MKV_Click;
+            buttonDeleteCountry_MKV.MouseEnter += buttonDeleteCountry_MKV_MouseEnter;
             // 
             // buttonDiag_MKV
             // 
@@ -365,7 +361,7 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13
             textBoxIsDeveloped_MKV.ReadOnly = true;
             textBoxIsDeveloped_MKV.Size = new Size(195, 27);
             textBoxIsDeveloped_MKV.TabIndex = 0;
-            textBoxIsDeveloped_MKV.Text = "Экономическое развитие";
+            textBoxIsDeveloped_MKV.Text = "Развитая";
             // 
             // textBoxNationality_MKV
             // 
@@ -451,6 +447,7 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13
             toolTip_MKV.SetToolTip(buttonSaveFile_MKV, "Сохранить выбранный файл ");
             buttonSaveFile_MKV.UseVisualStyleBackColor = true;
             buttonSaveFile_MKV.Click += buttonSaveFile_MKV_Click;
+            buttonSaveFile_MKV.MouseEnter += buttonSaveFile_MKV_MouseEnter;
             // 
             // buttonOpenFile_MKV
             // 
@@ -464,6 +461,7 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13
             toolTip_MKV.SetToolTip(buttonOpenFile_MKV, "Открыть нужный файл с данными");
             buttonOpenFile_MKV.UseVisualStyleBackColor = true;
             buttonOpenFile_MKV.Click += buttonOpenFile_MKV_Click;
+            buttonOpenFile_MKV.MouseEnter += buttonOpenFile_MKV_MouseEnter;
             // 
             // groupBoxOne_MKV
             // 
@@ -491,6 +489,7 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13
             toolTip_MKV.SetToolTip(buttonDelete_MKV, "Очистить поле");
             buttonDelete_MKV.UseVisualStyleBackColor = false;
             buttonDelete_MKV.Click += buttonDelete_MKV_Click;
+            buttonDelete_MKV.MouseEnter += buttonDelete_MKV_MouseEnter;
             // 
             // buttonSearch_MKV
             // 
@@ -504,6 +503,7 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13
             toolTip_MKV.SetToolTip(buttonSearch_MKV, "Выберите, чтобы осуществить поиск");
             buttonSearch_MKV.UseVisualStyleBackColor = true;
             buttonSearch_MKV.Click += buttonSearch_MKV_Click;
+            buttonSearch_MKV.MouseEnter += buttonSearch_MKV_MouseEnter;
             // 
             // textBoxOne_MKV
             // 
@@ -519,65 +519,13 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13
             // 
             // dataGridViewGeography_MKV
             // 
-            dataGridViewGeography_MKV.ColumnHeadersHeight = 29;
-            dataGridViewGeography_MKV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewGeography_MKV.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6, Column7 });
+            dataGridViewGeography_MKV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewGeography_MKV.Dock = DockStyle.Fill;
             dataGridViewGeography_MKV.Location = new Point(0, 0);
             dataGridViewGeography_MKV.Name = "dataGridViewGeography_MKV";
-            dataGridViewGeography_MKV.RowHeadersVisible = false;
             dataGridViewGeography_MKV.RowHeadersWidth = 51;
             dataGridViewGeography_MKV.Size = new Size(800, 695);
             dataGridViewGeography_MKV.TabIndex = 0;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "Название";
-            Column1.MinimumWidth = 6;
-            Column1.Name = "Column1";
-            Column1.Width = 125;
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Столица";
-            Column2.MinimumWidth = 6;
-            Column2.Name = "Column2";
-            Column2.Width = 125;
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Площадь";
-            Column3.MinimumWidth = 6;
-            Column3.Name = "Column3";
-            Column3.Width = 125;
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Количество населения";
-            Column4.MinimumWidth = 6;
-            Column4.Name = "Column4";
-            Column4.Width = 125;
-            // 
-            // Column5
-            // 
-            Column5.HeaderText = "Плоность населения";
-            Column5.MinimumWidth = 6;
-            Column5.Name = "Column5";
-            Column5.Width = 125;
-            // 
-            // Column6
-            // 
-            Column6.HeaderText = "Национальность";
-            Column6.MinimumWidth = 6;
-            Column6.Name = "Column6";
-            Column6.Width = 125;
-            // 
-            // Column7
-            // 
-            Column7.HeaderText = "Экономическое развитие";
-            Column7.MinimumWidth = 6;
-            Column7.Name = "Column7";
-            Column7.Width = 125;
             // 
             // openFileDialogProject_MKV
             // 
@@ -610,7 +558,7 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13
             ResumeLayout(false);
         }
 
-        
+
 
         #endregion
 
@@ -645,14 +593,6 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13
         private TextBox textBoxF_MKV;
         private Button buttonInfo_MKV;
         private Button buttonHelp_MKV;
-        private DataGridView dataGridViewGeography_MKV;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
-        private DataGridViewTextBoxColumn Column6;
-        private DataGridViewTextBoxColumn Column7;
         private Button buttonApplySorted_MKV;
         private Button buttonApplyFilter_MKV;
         private ComboBox comboBoxSorted_MKV;
@@ -661,5 +601,6 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13
         private Button buttonSearch_MKV;
         private ToolTip toolTip_MKV;
         private OpenFileDialog openFileDialogProject_MKV;
+        private DataGridView dataGridViewGeography_MKV;
     }
 }

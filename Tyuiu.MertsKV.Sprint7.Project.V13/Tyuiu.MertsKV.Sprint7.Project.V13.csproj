@@ -9,6 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="winforms.datavisualization" Version="1.9.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Tyuiu.MertsKV.Sprint7.Project.V13.Lib\Tyuiu.MertsKV.Sprint7.Project.V13.Lib.csproj" />
   </ItemGroup>
 

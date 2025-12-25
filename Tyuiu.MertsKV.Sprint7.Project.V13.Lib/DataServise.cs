@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel;
+using System.Diagnostics.Metrics;
 namespace Tyuiu.MertsKV.Sprint7.Project.V13.Lib
 {
+
     public class Country
     {
         public string Name { get; set; }
@@ -50,8 +52,8 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13.Lib
         public void SaveToCsv(string filePath)
         {
             var lines = new List<string> {
-                "Название;Столица;Площадь;Население;Плотность населения;Преобладающая национальность;Развитая"
-            };
+            "Название;Столица;Площадь;Население;Плотность населения;Преобладающая национальность;Развитая"
+        };
 
             foreach (var country in Countries)
             {
@@ -261,10 +263,10 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13.Lib
     }
 
 }
-    
-    
-        
-    
+
+
+
+
 
 
 
