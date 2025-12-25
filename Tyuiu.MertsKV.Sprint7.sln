@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36717.8 d17.14
+VisualStudioVersion = 17.14.36717.8
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tyuiu.MertsKV.Sprint7.Project.V13.Lib", "Tyuiu.MertsKV.Sprint7.Project.V13.Lib\Tyuiu.MertsKV.Sprint7.Project.V13.Lib.csproj", "{5497D5BD-A3CE-450E-B30F-5A8B97A1761C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tyuiu.MertsKV.Sprint7.Project.V13.Test", "Tyuiu.MertsKV.Sprint7.Project.V13.Test\Tyuiu.MertsKV.Sprint7.Project.V13.Test.csproj", "{65BC03CD-FFB2-4F10-923C-E0C4C9EDC31E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tyuiu.MertsKV.Sprint7.Project.V13", "Tyuiu.MertsKV.Sprint7.Project.V13\Tyuiu.MertsKV.Sprint7.Project.V13.csproj", "{7EE32655-F165-4C33-ACC5-F0E7921AD624}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{65BC03CD-FFB2-4F10-923C-E0C4C9EDC31E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65BC03CD-FFB2-4F10-923C-E0C4C9EDC31E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65BC03CD-FFB2-4F10-923C-E0C4C9EDC31E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EE32655-F165-4C33-ACC5-F0E7921AD624}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EE32655-F165-4C33-ACC5-F0E7921AD624}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EE32655-F165-4C33-ACC5-F0E7921AD624}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EE32655-F165-4C33-ACC5-F0E7921AD624}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
