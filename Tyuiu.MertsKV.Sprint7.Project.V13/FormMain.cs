@@ -96,10 +96,10 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13
 
         private void InitializeDataGridViewColumns_MKV()
         {
-            // Очищаем существующие колонки
+            // очищаем сущ колонки
             dataGridViewGeography_MKV.Columns.Clear();
 
-            // Создаем новые колонки по ТЗ (с вашими инициалами)
+            
             dataGridViewGeography_MKV.Columns.Add("ColumnName_MKV", "Название страны");
             dataGridViewGeography_MKV.Columns[0].Width = 150;
 
