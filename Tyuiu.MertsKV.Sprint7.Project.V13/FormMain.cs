@@ -478,10 +478,10 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13
         }
         private void UpdateDataGridView(List<Country> countries)
         {
-            // Очищаем DataGridView
+            
             dataGridViewGeography_MKV.Rows.Clear();
 
-            // Заполняем DataGridView данными
+           
             foreach (var country in countries)
             {
                 dataGridViewGeography_MKV.Rows.Add(
@@ -501,7 +501,7 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13
         {
             try
             {
-                // Проверяем, загружены ли данные
+                
                 if (ds.Countries == null || ds.Countries.Count == 0)
                 {
                     MessageBox.Show("Сначала загрузите данные из файла!", "Ошибка",
@@ -509,15 +509,13 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13
                     return;
                 }
 
-                // Сортируем страны по площади
+                
                 var sortedCountries = ds.SortByArea(ds.Countries.ToList());
 
-                // Обновляем DataGridView
+                
                 UpdateDataGridView(sortedCountries);
 
-                // Можно показать сообщение об успешной сортировке
-                // MessageBox.Show("Страны отсортированы по площади", "Сортировка", 
-                //     MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
             }
             catch (Exception ex)
             {
@@ -530,7 +528,7 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13
         {
             try
             {
-                // Проверяем, загружены ли данные
+                
                 if (ds.Countries == null || ds.Countries.Count == 0)
                 {
                     MessageBox.Show("Сначала загрузите данные из файла!", "Ошибка",
@@ -538,14 +536,13 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13
                     return;
                 }
 
-                // Сортируем страны по плотности населения
+                
                 var sortedCountries = ds.SortByDensity(ds.Countries.ToList());
 
-                // Обновляем DataGridView
+                
                 UpdateDataGridView(sortedCountries);
 
-                // MessageBox.Show("Страны отсортированы по плотности населения", "Сортировка", 
-                //     MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
             }
             catch (Exception ex)
             {
