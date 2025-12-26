@@ -171,7 +171,7 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13.Lib
             }
             File.WriteAllLines(filePath, lines, System.Text.Encoding.UTF8);
         }
-
+        
 
 
         public string GetStatisticsArea()

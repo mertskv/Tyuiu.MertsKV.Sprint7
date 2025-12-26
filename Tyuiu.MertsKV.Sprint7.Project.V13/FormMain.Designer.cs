@@ -33,11 +33,10 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             splitContainer_MKV = new SplitContainer();
             groupBoxInfo_MKV = new GroupBox();
+            buttonSortedDensity_MKV = new Button();
             buttonInfo_MKV = new Button();
             buttonHelp_MKV = new Button();
             groupBoxFilter_MKV = new GroupBox();
-            buttonSbros_MKV = new Button();
-            buttonDensity_MKV = new Button();
             buttonSortedArea_MKV = new Button();
             groupBoxTable_MKV = new GroupBox();
             buttonDeleteCountry_MKV = new Button();
@@ -68,6 +67,7 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13
             dataGridViewGeography_MKV = new DataGridView();
             openFileDialogProject_MKV = new OpenFileDialog();
             toolTip_MKV = new ToolTip(components);
+            saveFileDialog_MKV = new SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)splitContainer_MKV).BeginInit();
             splitContainer_MKV.Panel1.SuspendLayout();
             splitContainer_MKV.Panel2.SuspendLayout();
@@ -115,6 +115,18 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13
             groupBoxInfo_MKV.TabStop = false;
             groupBoxInfo_MKV.Text = "Информация ";
             // 
+            // buttonSortedDensity_MKV
+            // 
+            buttonSortedDensity_MKV.BackColor = Color.LightGreen;
+            buttonSortedDensity_MKV.FlatStyle = FlatStyle.Popup;
+            buttonSortedDensity_MKV.Location = new Point(364, 35);
+            buttonSortedDensity_MKV.Name = "buttonSortedDensity_MKV";
+            buttonSortedDensity_MKV.Size = new Size(116, 93);
+            buttonSortedDensity_MKV.TabIndex = 0;
+            buttonSortedDensity_MKV.Text = "Сортировка по плотности населения";
+            buttonSortedDensity_MKV.UseVisualStyleBackColor = false;
+            buttonSortedDensity_MKV.Click += buttonDensity_MKV_Click;
+            // 
             // buttonInfo_MKV
             // 
             buttonInfo_MKV.FlatStyle = FlatStyle.Flat;
@@ -146,8 +158,7 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13
             // 
             // groupBoxFilter_MKV
             // 
-            groupBoxFilter_MKV.Controls.Add(buttonSbros_MKV);
-            groupBoxFilter_MKV.Controls.Add(buttonDensity_MKV);
+            groupBoxFilter_MKV.Controls.Add(buttonSortedDensity_MKV);
             groupBoxFilter_MKV.Controls.Add(buttonSortedArea_MKV);
             groupBoxFilter_MKV.Dock = DockStyle.Top;
             groupBoxFilter_MKV.Location = new Point(0, 539);
@@ -157,40 +168,16 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13
             groupBoxFilter_MKV.TabStop = false;
             groupBoxFilter_MKV.Text = "Сортировка данных";
             // 
-            // buttonSbros_MKV
-            // 
-            buttonSbros_MKV.BackColor = Color.IndianRed;
-            buttonSbros_MKV.FlatStyle = FlatStyle.Popup;
-            buttonSbros_MKV.Location = new Point(406, 49);
-            buttonSbros_MKV.Name = "buttonSbros_MKV";
-            buttonSbros_MKV.Size = new Size(94, 29);
-            buttonSbros_MKV.TabIndex = 1;
-            buttonSbros_MKV.Text = "Сброс";
-            buttonSbros_MKV.UseVisualStyleBackColor = false;
-            buttonSbros_MKV.Click += buttonSbros_MKV_Click;
-            // 
-            // buttonDensity_MKV
-            // 
-            buttonDensity_MKV.BackColor = Color.LightGreen;
-            buttonDensity_MKV.FlatStyle = FlatStyle.Popup;
-            buttonDensity_MKV.Location = new Point(249, 35);
-            buttonDensity_MKV.Name = "buttonDensity_MKV";
-            buttonDensity_MKV.Size = new Size(116, 93);
-            buttonDensity_MKV.TabIndex = 0;
-            buttonDensity_MKV.Text = "Сортировка по плотности населения";
-            buttonDensity_MKV.UseVisualStyleBackColor = false;
-            buttonDensity_MKV.Click += buttonDensity_MKV_Click;
-            // 
             // buttonSortedArea_MKV
             // 
             buttonSortedArea_MKV.BackColor = Color.LightGreen;
             buttonSortedArea_MKV.FlatStyle = FlatStyle.Popup;
             buttonSortedArea_MKV.ForeColor = SystemColors.Desktop;
-            buttonSortedArea_MKV.Location = new Point(96, 35);
+            buttonSortedArea_MKV.Location = new Point(193, 35);
             buttonSortedArea_MKV.Name = "buttonSortedArea_MKV";
             buttonSortedArea_MKV.Size = new Size(128, 93);
             buttonSortedArea_MKV.TabIndex = 0;
-            buttonSortedArea_MKV.Text = "Сортировка по количеству населения";
+            buttonSortedArea_MKV.Text = "Сортировка по площади";
             buttonSortedArea_MKV.UseVisualStyleBackColor = false;
             buttonSortedArea_MKV.Click += buttonSortedArea_MKV_Click;
             // 
@@ -227,7 +214,7 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13
             buttonDiag_MKV.Name = "buttonDiag_MKV";
             buttonDiag_MKV.Size = new Size(121, 80);
             buttonDiag_MKV.TabIndex = 0;
-            toolTip_MKV.SetToolTip(buttonDiag_MKV, "Просмотреть диаграму о странах");
+            toolTip_MKV.SetToolTip(buttonDiag_MKV, "Просмотр статистики стран");
             buttonDiag_MKV.UseVisualStyleBackColor = true;
             buttonDiag_MKV.Click += buttonDiag_MKV_Click;
             // 
@@ -568,8 +555,9 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13
         private ToolTip toolTip_MKV;
         private OpenFileDialog openFileDialogProject_MKV;
         private DataGridView dataGridViewGeography_MKV;
-        private Button buttonSbros_MKV;
-        private Button buttonDensity_MKV;
+        private Button buttonSortedDensity_MKV;
         private Button buttonSortedArea_MKV;
+        private SaveFileDialog saveFileDialog_MKV;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartCountries_MKV;
     }
 }

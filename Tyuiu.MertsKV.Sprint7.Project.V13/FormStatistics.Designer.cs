@@ -29,45 +29,27 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            chartCountries_MKV = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             textBoxName_MKV = new TextBox();
             textBoxCapital_MKV = new TextBox();
             textBoxArea_MKV = new TextBox();
             textBoxPopulation_MKV = new TextBox();
-            textBoxDensity_MKV = new TextBox();
+            textBoxDens_MKV = new TextBox();
             textBoxNationality_MKV = new TextBox();
+            textBoxDevel_MKV = new TextBox();
+            textBoxCount_MKV = new TextBox();
+            textBoxAvgPopulation_MKV = new TextBox();
+            textBoxMinArea_MKV = new TextBox();
+            textBoxMaxArea_MKV = new TextBox();
             textBoxDeveloped_MKV = new TextBox();
-            textBoxCountRes_MKV = new TextBox();
-            textBoxAvgPop_MKV = new TextBox();
-            textBoxMinAreaRes_MKV = new TextBox();
-            textBoxMaxAreaRes_MKV = new TextBox();
-            textBoxDevRes_MKV = new TextBox();
             textBoxDevingRes_MKV = new TextBox();
             textBoxDS_MKV = new TextBox();
             buttonOk_MKV = new Button();
+            chartCountries_MKV = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)chartCountries_MKV).BeginInit();
             SuspendLayout();
-            // 
-            // chartCountries_MKV
-            // 
-            chartArea1.Name = "ChartArea1";
-            chartCountries_MKV.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            chartCountries_MKV.Legends.Add(legend1);
-            chartCountries_MKV.Location = new Point(515, 39);
-            chartCountries_MKV.Name = "chartCountries_MKV";
-            chartCountries_MKV.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            chartCountries_MKV.Series.Add(series1);
-            chartCountries_MKV.Size = new Size(558, 508);
-            chartCountries_MKV.TabIndex = 0;
-            chartCountries_MKV.Text = "chart1";
             // 
             // textBoxName_MKV
             // 
@@ -112,16 +94,16 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13
             textBoxPopulation_MKV.TabIndex = 1;
             textBoxPopulation_MKV.Text = "Максимальная площадь территории:";
             // 
-            // textBoxDensity_MKV
+            // textBoxDens_MKV
             // 
-            textBoxDensity_MKV.BorderStyle = BorderStyle.FixedSingle;
-            textBoxDensity_MKV.Location = new Point(22, 344);
-            textBoxDensity_MKV.Multiline = true;
-            textBoxDensity_MKV.Name = "textBoxDensity_MKV";
-            textBoxDensity_MKV.ReadOnly = true;
-            textBoxDensity_MKV.Size = new Size(192, 44);
-            textBoxDensity_MKV.TabIndex = 1;
-            textBoxDensity_MKV.Text = "Количество развитых стран:";
+            textBoxDens_MKV.BorderStyle = BorderStyle.FixedSingle;
+            textBoxDens_MKV.Location = new Point(22, 344);
+            textBoxDens_MKV.Multiline = true;
+            textBoxDens_MKV.Name = "textBoxDens_MKV";
+            textBoxDens_MKV.ReadOnly = true;
+            textBoxDens_MKV.Size = new Size(192, 44);
+            textBoxDens_MKV.TabIndex = 1;
+            textBoxDens_MKV.Text = "Количество развитых стран:";
             // 
             // textBoxNationality_MKV
             // 
@@ -134,70 +116,70 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13
             textBoxNationality_MKV.TabIndex = 1;
             textBoxNationality_MKV.Text = "Количество развивающихся стран:";
             // 
+            // textBoxDevel_MKV
+            // 
+            textBoxDevel_MKV.BorderStyle = BorderStyle.FixedSingle;
+            textBoxDevel_MKV.Location = new Point(22, 500);
+            textBoxDevel_MKV.Multiline = true;
+            textBoxDevel_MKV.Name = "textBoxDevel_MKV";
+            textBoxDevel_MKV.ReadOnly = true;
+            textBoxDevel_MKV.Size = new Size(192, 47);
+            textBoxDevel_MKV.TabIndex = 1;
+            textBoxDevel_MKV.Text = "Общая плотность населения данных стран:";
+            // 
+            // textBoxCount_MKV
+            // 
+            textBoxCount_MKV.BorderStyle = BorderStyle.FixedSingle;
+            textBoxCount_MKV.Location = new Point(264, 39);
+            textBoxCount_MKV.Name = "textBoxCount_MKV";
+            textBoxCount_MKV.ReadOnly = true;
+            textBoxCount_MKV.Size = new Size(142, 27);
+            textBoxCount_MKV.TabIndex = 2;
+            textBoxCount_MKV.Text = "30";
+            // 
+            // textBoxAvgPopulation_MKV
+            // 
+            textBoxAvgPopulation_MKV.BorderStyle = BorderStyle.FixedSingle;
+            textBoxAvgPopulation_MKV.Location = new Point(264, 96);
+            textBoxAvgPopulation_MKV.Multiline = true;
+            textBoxAvgPopulation_MKV.Name = "textBoxAvgPopulation_MKV";
+            textBoxAvgPopulation_MKV.ReadOnly = true;
+            textBoxAvgPopulation_MKV.Size = new Size(142, 46);
+            textBoxAvgPopulation_MKV.TabIndex = 2;
+            textBoxAvgPopulation_MKV.Text = "194,728,205 человек";
+            // 
+            // textBoxMinArea_MKV
+            // 
+            textBoxMinArea_MKV.BorderStyle = BorderStyle.FixedSingle;
+            textBoxMinArea_MKV.Location = new Point(264, 180);
+            textBoxMinArea_MKV.Multiline = true;
+            textBoxMinArea_MKV.Name = "textBoxMinArea_MKV";
+            textBoxMinArea_MKV.ReadOnly = true;
+            textBoxMinArea_MKV.Size = new Size(142, 48);
+            textBoxMinArea_MKV.TabIndex = 2;
+            textBoxMinArea_MKV.Text = "30,528 км²";
+            // 
+            // textBoxMaxArea_MKV
+            // 
+            textBoxMaxArea_MKV.BorderStyle = BorderStyle.FixedSingle;
+            textBoxMaxArea_MKV.Location = new Point(264, 263);
+            textBoxMaxArea_MKV.Multiline = true;
+            textBoxMaxArea_MKV.Name = "textBoxMaxArea_MKV";
+            textBoxMaxArea_MKV.ReadOnly = true;
+            textBoxMaxArea_MKV.Size = new Size(142, 44);
+            textBoxMaxArea_MKV.TabIndex = 2;
+            textBoxMaxArea_MKV.Text = "7,125,191 км²";
+            // 
             // textBoxDeveloped_MKV
             // 
             textBoxDeveloped_MKV.BorderStyle = BorderStyle.FixedSingle;
-            textBoxDeveloped_MKV.Location = new Point(22, 500);
+            textBoxDeveloped_MKV.Location = new Point(264, 343);
             textBoxDeveloped_MKV.Multiline = true;
             textBoxDeveloped_MKV.Name = "textBoxDeveloped_MKV";
             textBoxDeveloped_MKV.ReadOnly = true;
-            textBoxDeveloped_MKV.Size = new Size(192, 47);
-            textBoxDeveloped_MKV.TabIndex = 1;
-            textBoxDeveloped_MKV.Text = "Общая плотность населения данных стран:";
-            // 
-            // textBoxCountRes_MKV
-            // 
-            textBoxCountRes_MKV.BorderStyle = BorderStyle.FixedSingle;
-            textBoxCountRes_MKV.Location = new Point(264, 39);
-            textBoxCountRes_MKV.Name = "textBoxCountRes_MKV";
-            textBoxCountRes_MKV.ReadOnly = true;
-            textBoxCountRes_MKV.Size = new Size(142, 27);
-            textBoxCountRes_MKV.TabIndex = 2;
-            textBoxCountRes_MKV.Text = "30";
-            // 
-            // textBoxAvgPop_MKV
-            // 
-            textBoxAvgPop_MKV.BorderStyle = BorderStyle.FixedSingle;
-            textBoxAvgPop_MKV.Location = new Point(264, 96);
-            textBoxAvgPop_MKV.Multiline = true;
-            textBoxAvgPop_MKV.Name = "textBoxAvgPop_MKV";
-            textBoxAvgPop_MKV.ReadOnly = true;
-            textBoxAvgPop_MKV.Size = new Size(142, 46);
-            textBoxAvgPop_MKV.TabIndex = 2;
-            textBoxAvgPop_MKV.Text = "194,728,205 человек";
-            // 
-            // textBoxMinAreaRes_MKV
-            // 
-            textBoxMinAreaRes_MKV.BorderStyle = BorderStyle.FixedSingle;
-            textBoxMinAreaRes_MKV.Location = new Point(264, 180);
-            textBoxMinAreaRes_MKV.Multiline = true;
-            textBoxMinAreaRes_MKV.Name = "textBoxMinAreaRes_MKV";
-            textBoxMinAreaRes_MKV.ReadOnly = true;
-            textBoxMinAreaRes_MKV.Size = new Size(142, 48);
-            textBoxMinAreaRes_MKV.TabIndex = 2;
-            textBoxMinAreaRes_MKV.Text = "30,528 км²";
-            // 
-            // textBoxMaxAreaRes_MKV
-            // 
-            textBoxMaxAreaRes_MKV.BorderStyle = BorderStyle.FixedSingle;
-            textBoxMaxAreaRes_MKV.Location = new Point(264, 263);
-            textBoxMaxAreaRes_MKV.Multiline = true;
-            textBoxMaxAreaRes_MKV.Name = "textBoxMaxAreaRes_MKV";
-            textBoxMaxAreaRes_MKV.ReadOnly = true;
-            textBoxMaxAreaRes_MKV.Size = new Size(142, 44);
-            textBoxMaxAreaRes_MKV.TabIndex = 2;
-            textBoxMaxAreaRes_MKV.Text = "7,125,191 км²";
-            // 
-            // textBoxDevRes_MKV
-            // 
-            textBoxDevRes_MKV.BorderStyle = BorderStyle.FixedSingle;
-            textBoxDevRes_MKV.Location = new Point(264, 343);
-            textBoxDevRes_MKV.Multiline = true;
-            textBoxDevRes_MKV.Name = "textBoxDevRes_MKV";
-            textBoxDevRes_MKV.ReadOnly = true;
-            textBoxDevRes_MKV.Size = new Size(142, 45);
-            textBoxDevRes_MKV.TabIndex = 2;
-            textBoxDevRes_MKV.Text = "17";
+            textBoxDeveloped_MKV.Size = new Size(142, 45);
+            textBoxDeveloped_MKV.TabIndex = 2;
+            textBoxDeveloped_MKV.Text = "17";
             // 
             // textBoxDevingRes_MKV
             // 
@@ -232,27 +214,44 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13
             buttonOk_MKV.UseVisualStyleBackColor = true;
             buttonOk_MKV.Click += buttonOk_MKV_Click;
             // 
+            // chartCountries_MKV
+            // 
+            chartArea2.Name = "ChartArea1";
+            chartCountries_MKV.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            chartCountries_MKV.Legends.Add(legend2);
+            chartCountries_MKV.Location = new Point(498, 39);
+            chartCountries_MKV.Name = "chartCountries_MKV";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            chartCountries_MKV.Series.Add(series2);
+            chartCountries_MKV.Size = new Size(575, 508);
+            chartCountries_MKV.TabIndex = 4;
+            chartCountries_MKV.Text = "chart1";
+            // 
             // FormStatistics
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1098, 637);
+            Controls.Add(chartCountries_MKV);
             Controls.Add(buttonOk_MKV);
             Controls.Add(textBoxDS_MKV);
             Controls.Add(textBoxDevingRes_MKV);
-            Controls.Add(textBoxDevRes_MKV);
-            Controls.Add(textBoxMaxAreaRes_MKV);
-            Controls.Add(textBoxMinAreaRes_MKV);
-            Controls.Add(textBoxAvgPop_MKV);
-            Controls.Add(textBoxCountRes_MKV);
+            Controls.Add(textBoxDeveloped_MKV);
+            Controls.Add(textBoxMaxArea_MKV);
+            Controls.Add(textBoxMinArea_MKV);
+            Controls.Add(textBoxAvgPopulation_MKV);
+            Controls.Add(textBoxCount_MKV);
             Controls.Add(textBoxPopulation_MKV);
             Controls.Add(textBoxArea_MKV);
             Controls.Add(textBoxCapital_MKV);
-            Controls.Add(textBoxDensity_MKV);
+            Controls.Add(textBoxDens_MKV);
             Controls.Add(textBoxNationality_MKV);
-            Controls.Add(textBoxDeveloped_MKV);
+            Controls.Add(textBoxDevel_MKV);
             Controls.Add(textBoxName_MKV);
-            Controls.Add(chartCountries_MKV);
             MaximizeBox = false;
             MaximumSize = new Size(1116, 684);
             MinimumSize = new Size(1116, 684);
@@ -265,25 +264,22 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13
             PerformLayout();
         }
 
-
-
         #endregion
-
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartCountries_MKV;
         private TextBox textBoxName_MKV;
         private TextBox textBoxCapital_MKV;
         private TextBox textBoxArea_MKV;
         private TextBox textBoxPopulation_MKV;
-        private TextBox textBoxDensity_MKV;
+        private TextBox textBoxDens_MKV;
         private TextBox textBoxNationality_MKV;
+        private TextBox textBoxDevel_MKV;
+        private TextBox textBoxCount_MKV;
+        private TextBox textBoxAvgPopulation_MKV;
+        private TextBox textBoxMinArea_MKV;
+        private TextBox textBoxMaxArea_MKV;
         private TextBox textBoxDeveloped_MKV;
-        private TextBox textBoxCountRes_MKV;
-        private TextBox textBoxAvgPop_MKV;
-        private TextBox textBoxMinAreaRes_MKV;
-        private TextBox textBoxMaxAreaRes_MKV;
-        private TextBox textBoxDevRes_MKV;
         private TextBox textBoxDevingRes_MKV;
         private TextBox textBoxDS_MKV;
         private Button buttonOk_MKV;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartCountries_MKV;
     }
 }

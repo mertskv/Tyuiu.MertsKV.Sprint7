@@ -45,6 +45,7 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13
             {
                 dataGridViewGeography_MKV.ClearSelection();
                 dataGridViewGeography_MKV.Rows[rowIndex].Selected = true;
+
             }
         }
         private void buttonOpenFile_MKV_Click(object sender, EventArgs e)
@@ -57,7 +58,7 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13
                 {
                     string filePath = openFileDialogProject_MKV.FileName;
 
-                    // Проверяем, что файл существует
+                    // проверка сущ файла
                     if (!System.IO.File.Exists(filePath))
                     {
                         MessageBox.Show($"Файл не найден:\n{filePath}",
@@ -249,22 +250,44 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13
 
         private void buttonSaveFile_MKV_Click(object sender, EventArgs e)
         {
-            try
+            saveFileDialog_MKV.FileName = "страны.csv";
+            saveFileDialog_MKV.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop); 
+            saveFileDialog_MKV.ShowDialog();
+
+            string path = saveFileDialog_MKV.FileName;
+
+            if (!string.IsNullOrEmpty(path))
             {
-                openFileDialogProject_MKV.Filter = "Значения, разделенные точкой с запятой(*.csv)|*.csv|Все файлы(*.*)|*.*";
-                if (openFileDialogProject_MKV.ShowDialog() == DialogResult.OK)
+                if (File.Exists(path))
                 {
-                    ds.LoadFromCsv(openFileDialogProject_MKV.FileName);
-                    MessageBox.Show("Данные загружены!", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    File.Delete(path);
                 }
-            }
-            catch
-            {
-                MessageBox.Show("Введены неверные данные", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                int rows = dataGridViewGeography_MKV.RowCount;
+                int columns = dataGridViewGeography_MKV.ColumnCount;
+                string str = "";
+
+                for (int i = 0; i < rows; i++)
+                {
+                    for (int j = 0; j < columns; j++)
+                    {
+                        str = str + dataGridViewGeography_MKV.Rows[i].Cells[j].Value;
+
+                        if (j != columns - 1)
+                        {
+                            str = str + ";";
+                        }
+                    }
+                    File.AppendAllText(path, str + Environment.NewLine);
+                    str = "";
+                }
+
+                MessageBox.Show($"Файл сохранен на рабочем столе:\n{Path.GetFileName(path)}",
+                 "Сохранено", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
-
+        
 
         private void buttonPlus_MKV_Click(object sender, EventArgs e)
         {
@@ -453,20 +476,85 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13
         {
 
         }
+        private void UpdateDataGridView(List<Country> countries)
+        {
+            // Очищаем DataGridView
+            dataGridViewGeography_MKV.Rows.Clear();
 
+            // Заполняем DataGridView данными
+            foreach (var country in countries)
+            {
+                dataGridViewGeography_MKV.Rows.Add(
+                    country.Name,
+                    country.Capital,
+                    country.Area,
+                    country.Population,
+                    country.Population_density,
+                    country.MainNationality,
+                    country.IsDeveloped ? "Да" : "Нет"
+                );
+            }
+        }
+
+       
         private void buttonSortedArea_MKV_Click(object sender, EventArgs e)
         {
+            try
+            {
+                // Проверяем, загружены ли данные
+                if (ds.Countries == null || ds.Countries.Count == 0)
+                {
+                    MessageBox.Show("Сначала загрузите данные из файла!", "Ошибка",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
+                // Сортируем страны по площади
+                var sortedCountries = ds.SortByArea(ds.Countries.ToList());
+
+                // Обновляем DataGridView
+                UpdateDataGridView(sortedCountries);
+
+                // Можно показать сообщение об успешной сортировке
+                // MessageBox.Show("Страны отсортированы по площади", "Сортировка", 
+                //     MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка при сортировке: {ex.Message}", "Ошибка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void buttonDensity_MKV_Click(object sender, EventArgs e)
         {
+            try
+            {
+                // Проверяем, загружены ли данные
+                if (ds.Countries == null || ds.Countries.Count == 0)
+                {
+                    MessageBox.Show("Сначала загрузите данные из файла!", "Ошибка",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
+                // Сортируем страны по плотности населения
+                var sortedCountries = ds.SortByDensity(ds.Countries.ToList());
+
+                // Обновляем DataGridView
+                UpdateDataGridView(sortedCountries);
+
+                // MessageBox.Show("Страны отсортированы по плотности населения", "Сортировка", 
+                //     MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка при сортировке: {ex.Message}", "Ошибка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+       
 
-        private void buttonSbros_MKV_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
