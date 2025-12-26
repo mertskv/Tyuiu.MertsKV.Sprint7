@@ -36,12 +36,9 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13
             buttonInfo_MKV = new Button();
             buttonHelp_MKV = new Button();
             groupBoxFilter_MKV = new GroupBox();
-            buttonApplySorted_MKV = new Button();
-            buttonApplyFilter_MKV = new Button();
-            comboBoxSorted_MKV = new ComboBox();
-            comboBoxFilter_MKV = new ComboBox();
-            textBoxS_MKV = new TextBox();
-            textBoxF_MKV = new TextBox();
+            buttonSbros_MKV = new Button();
+            buttonDensity_MKV = new Button();
+            buttonSortedArea_MKV = new Button();
             groupBoxTable_MKV = new GroupBox();
             buttonDeleteCountry_MKV = new Button();
             buttonDiag_MKV = new Button();
@@ -111,9 +108,9 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13
             groupBoxInfo_MKV.Controls.Add(buttonInfo_MKV);
             groupBoxInfo_MKV.Controls.Add(buttonHelp_MKV);
             groupBoxInfo_MKV.Dock = DockStyle.Bottom;
-            groupBoxInfo_MKV.Location = new Point(0, 625);
+            groupBoxInfo_MKV.Location = new Point(0, 623);
             groupBoxInfo_MKV.Name = "groupBoxInfo_MKV";
-            groupBoxInfo_MKV.Size = new Size(520, 70);
+            groupBoxInfo_MKV.Size = new Size(520, 72);
             groupBoxInfo_MKV.TabIndex = 5;
             groupBoxInfo_MKV.TabStop = false;
             groupBoxInfo_MKV.Text = "Информация ";
@@ -149,77 +146,53 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13
             // 
             // groupBoxFilter_MKV
             // 
-            groupBoxFilter_MKV.Controls.Add(buttonApplySorted_MKV);
-            groupBoxFilter_MKV.Controls.Add(buttonApplyFilter_MKV);
-            groupBoxFilter_MKV.Controls.Add(comboBoxSorted_MKV);
-            groupBoxFilter_MKV.Controls.Add(comboBoxFilter_MKV);
-            groupBoxFilter_MKV.Controls.Add(textBoxS_MKV);
-            groupBoxFilter_MKV.Controls.Add(textBoxF_MKV);
+            groupBoxFilter_MKV.Controls.Add(buttonSbros_MKV);
+            groupBoxFilter_MKV.Controls.Add(buttonDensity_MKV);
+            groupBoxFilter_MKV.Controls.Add(buttonSortedArea_MKV);
             groupBoxFilter_MKV.Dock = DockStyle.Top;
             groupBoxFilter_MKV.Location = new Point(0, 539);
             groupBoxFilter_MKV.Name = "groupBoxFilter_MKV";
-            groupBoxFilter_MKV.Size = new Size(520, 86);
+            groupBoxFilter_MKV.Size = new Size(520, 150);
             groupBoxFilter_MKV.TabIndex = 4;
             groupBoxFilter_MKV.TabStop = false;
-            groupBoxFilter_MKV.Text = "Фильтр и сортировка данных";
+            groupBoxFilter_MKV.Text = "Сортировка данных";
             // 
-            // buttonApplySorted_MKV
+            // buttonSbros_MKV
             // 
-            buttonApplySorted_MKV.BackColor = Color.LightGreen;
-            buttonApplySorted_MKV.Location = new Point(336, 51);
-            buttonApplySorted_MKV.Name = "buttonApplySorted_MKV";
-            buttonApplySorted_MKV.Size = new Size(138, 29);
-            buttonApplySorted_MKV.TabIndex = 2;
-            buttonApplySorted_MKV.Text = "Применить";
-            buttonApplySorted_MKV.UseVisualStyleBackColor = false;
-            buttonApplySorted_MKV.Click += buttonApplySorted_MKV_Click;
+            buttonSbros_MKV.BackColor = Color.IndianRed;
+            buttonSbros_MKV.FlatStyle = FlatStyle.Popup;
+            buttonSbros_MKV.Location = new Point(406, 49);
+            buttonSbros_MKV.Name = "buttonSbros_MKV";
+            buttonSbros_MKV.Size = new Size(94, 29);
+            buttonSbros_MKV.TabIndex = 1;
+            buttonSbros_MKV.Text = "Сброс";
+            buttonSbros_MKV.UseVisualStyleBackColor = false;
+            buttonSbros_MKV.Click += buttonSbros_MKV_Click;
             // 
-            // buttonApplyFilter_MKV
+            // buttonDensity_MKV
             // 
-            buttonApplyFilter_MKV.BackColor = Color.LightGreen;
-            buttonApplyFilter_MKV.Location = new Point(336, 20);
-            buttonApplyFilter_MKV.Name = "buttonApplyFilter_MKV";
-            buttonApplyFilter_MKV.Size = new Size(138, 29);
-            buttonApplyFilter_MKV.TabIndex = 2;
-            buttonApplyFilter_MKV.Text = "Применить";
-            buttonApplyFilter_MKV.UseVisualStyleBackColor = false;
-            buttonApplyFilter_MKV.Click += buttonApplyFilter_MKV_Click;
+            buttonDensity_MKV.BackColor = Color.LightGreen;
+            buttonDensity_MKV.FlatStyle = FlatStyle.Popup;
+            buttonDensity_MKV.Location = new Point(249, 35);
+            buttonDensity_MKV.Name = "buttonDensity_MKV";
+            buttonDensity_MKV.Size = new Size(116, 93);
+            buttonDensity_MKV.TabIndex = 0;
+            buttonDensity_MKV.Text = "Сортировка по плотности населения";
+            buttonDensity_MKV.UseVisualStyleBackColor = false;
+            buttonDensity_MKV.Click += buttonDensity_MKV_Click;
             // 
-            // comboBoxSorted_MKV
+            // buttonSortedArea_MKV
             // 
-            comboBoxSorted_MKV.FormattingEnabled = true;
-            comboBoxSorted_MKV.Location = new Point(131, 52);
-            comboBoxSorted_MKV.Name = "comboBoxSorted_MKV";
-            comboBoxSorted_MKV.Size = new Size(151, 28);
-            comboBoxSorted_MKV.TabIndex = 1;
-            // 
-            // comboBoxFilter_MKV
-            // 
-            comboBoxFilter_MKV.FormattingEnabled = true;
-            comboBoxFilter_MKV.Location = new Point(131, 20);
-            comboBoxFilter_MKV.Name = "comboBoxFilter_MKV";
-            comboBoxFilter_MKV.Size = new Size(151, 28);
-            comboBoxFilter_MKV.TabIndex = 1;
-            // 
-            // textBoxS_MKV
-            // 
-            textBoxS_MKV.BorderStyle = BorderStyle.FixedSingle;
-            textBoxS_MKV.Location = new Point(6, 53);
-            textBoxS_MKV.Name = "textBoxS_MKV";
-            textBoxS_MKV.ReadOnly = true;
-            textBoxS_MKV.Size = new Size(103, 27);
-            textBoxS_MKV.TabIndex = 0;
-            textBoxS_MKV.Text = "Сортировка -";
-            // 
-            // textBoxF_MKV
-            // 
-            textBoxF_MKV.BorderStyle = BorderStyle.FixedSingle;
-            textBoxF_MKV.Location = new Point(6, 20);
-            textBoxF_MKV.Name = "textBoxF_MKV";
-            textBoxF_MKV.ReadOnly = true;
-            textBoxF_MKV.Size = new Size(103, 27);
-            textBoxF_MKV.TabIndex = 0;
-            textBoxF_MKV.Text = "Фильтр -";
+            buttonSortedArea_MKV.BackColor = Color.LightGreen;
+            buttonSortedArea_MKV.FlatStyle = FlatStyle.Popup;
+            buttonSortedArea_MKV.ForeColor = SystemColors.Desktop;
+            buttonSortedArea_MKV.Location = new Point(96, 35);
+            buttonSortedArea_MKV.Name = "buttonSortedArea_MKV";
+            buttonSortedArea_MKV.Size = new Size(128, 93);
+            buttonSortedArea_MKV.TabIndex = 0;
+            buttonSortedArea_MKV.Text = "Сортировка по количеству населения";
+            buttonSortedArea_MKV.UseVisualStyleBackColor = false;
+            buttonSortedArea_MKV.Click += buttonSortedArea_MKV_Click;
             // 
             // groupBoxTable_MKV
             // 
@@ -547,7 +520,6 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13
             splitContainer_MKV.ResumeLayout(false);
             groupBoxInfo_MKV.ResumeLayout(false);
             groupBoxFilter_MKV.ResumeLayout(false);
-            groupBoxFilter_MKV.PerformLayout();
             groupBoxTable_MKV.ResumeLayout(false);
             groupBoxThree_MKV.ResumeLayout(false);
             groupBoxThree_MKV.PerformLayout();
@@ -589,18 +561,15 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13
         private Button buttonDiag_MKV;
         private GroupBox groupBoxFilter_MKV;
         private GroupBox groupBoxInfo_MKV;
-        private TextBox textBoxS_MKV;
-        private TextBox textBoxF_MKV;
         private Button buttonInfo_MKV;
         private Button buttonHelp_MKV;
-        private Button buttonApplySorted_MKV;
-        private Button buttonApplyFilter_MKV;
-        private ComboBox comboBoxSorted_MKV;
-        private ComboBox comboBoxFilter_MKV;
         private Button buttonDelete_MKV;
         private Button buttonSearch_MKV;
         private ToolTip toolTip_MKV;
         private OpenFileDialog openFileDialogProject_MKV;
         private DataGridView dataGridViewGeography_MKV;
+        private Button buttonSbros_MKV;
+        private Button buttonDensity_MKV;
+        private Button buttonSortedArea_MKV;
     }
 }

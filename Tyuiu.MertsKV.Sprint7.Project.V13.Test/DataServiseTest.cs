@@ -28,6 +28,7 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13.Test
 
 
 
+
         [TestMethod]
         public void GetStatistickAreaTest()
         {

@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Diagnostics.Metrics;
+using System.Text;
 namespace Tyuiu.MertsKV.Sprint7.Project.V13.Lib
 {
 
@@ -29,47 +30,49 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13.Lib
         public void LoadFromCsv(string filePath)
         {
             Countries.Clear();
-            var lines = File.ReadAllLines(filePath, System.Text.Encoding.UTF8);
+            var lines = File.ReadAllLines(filePath, Encoding.Default);
 
-            // Пропускаем заголовок
             foreach (var line in lines.Skip(1))
             {
-                var values = line.Split(';');
+                // убираем кавычки в таблице
+                string cleanLine = line.TrimStart('"').Replace("\"", "");
+                var values = cleanLine.Split(';');
 
-                // Проверяем, что в строке достаточно значений
                 if (values.Length < 7)
-                    continue; // Пропускаем строки с недостаточным количеством данных
+                    continue;
 
                 var country = new Country
                 {
-                    Name = values[0],
-                    Capital = values[1],
-                    // Безопасный парсинг с заменой точки/запятой
+                    Name = values[0].Trim(),
+                    Capital = values[1].Trim(),
                     Area = SafeParseDouble(values[2]),
                     Population = SafeParseInt(values[3]),
                     Population_density = SafeParseDouble(values[4]),
-                    MainNationality = values[5],
-                    // Безопасный парсинг bool
-                    IsDeveloped = SafeParseBool(values[6]),
+                    MainNationality = values[5].Trim(),
+                    IsDeveloped = SafeParseBool(values[6]), 
                 };
                 Countries.Add(country);
             }
         }
 
-        // Добавьте эти методы в класс DataService для безопасного парсинга
+            
+
+            
+
+        // безопасный парсинг
         private double SafeParseDouble(string value)
         {
             if (string.IsNullOrWhiteSpace(value))
                 return 0;
 
-            // Заменяем запятую на точку для корректного парсинга
+            // замена для корректного парсинга
             value = value.Replace(',', '.');
 
             if (double.TryParse(value, System.Globalization.NumberStyles.Any,
                 System.Globalization.CultureInfo.InvariantCulture, out double result))
                 return result;
 
-            return 0; // Возвращаем 0 при ошибке вместо исключения
+            return 0; // возвращаем 0 при ошибке
         }
 
         private int SafeParseInt(string value)
@@ -80,7 +83,7 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13.Lib
             if (int.TryParse(value, out int result))
                 return result;
 
-            return 0; // Возвращаем 0 при ошибке вместо исключения
+            return 0; 
         }
 
         private bool SafeParseBool(string value)
@@ -90,7 +93,7 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13.Lib
 
             value = value.Trim().ToLower();
 
-            // Поддерживаем разные форматы
+            
             return value == "true" || value == "1" || value == "да" || value == "yes";
         }
 
@@ -101,17 +104,55 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13.Lib
 
             foreach (var country in Countries)
             {
+                // ищем в разных форматах данных
                 if (country.Name.ToLower().Contains(searchLower) ||
                     country.Capital.ToLower().Contains(searchLower) ||
                     country.MainNationality.ToLower().Contains(searchLower) ||
                     country.Area.ToString().Contains(searchText) ||
-                    country.Population.ToString().Contains(searchText))
+                    country.Population.ToString().Contains(searchText) ||
+                    country.Population_density.ToString().Contains(searchText) ||
+                    (country.IsDeveloped ? "да" : "нет").Contains(searchLower))
                 {
                     result.Add(country);
                 }
             }
 
             return result;
+        }
+
+        public List<Country> SortByName(List<Country> countries)
+        {
+            return countries.OrderBy(c => c.Name).ToList();
+        }
+
+        public List<Country> SortByArea(List<Country> countries)
+        {
+            return countries.OrderBy(c => c.Area).ToList();
+        }
+
+        public List<Country> SortByPopulation(List<Country> countries)
+        {
+            return countries.OrderBy(c => c.Population).ToList();
+        }
+
+        public List<Country> SortByAreaDescending(List<Country> countries)
+        {
+            return countries.OrderByDescending(c => c.Area).ToList();
+        }
+
+        public List<Country> SortByPopulationDescending(List<Country> countries)
+        {
+            return countries.OrderByDescending(c => c.Population).ToList();
+        }
+
+        public List<Country> SortByDensity(List<Country> countries)
+        {
+            return countries.OrderBy(c => c.Population_density).ToList();
+        }
+
+        public List<Country> SortByDensityDescending(List<Country> countries)
+        {
+            return countries.OrderByDescending(c => c.Population_density).ToList();
         }
 
 
@@ -280,6 +321,7 @@ namespace Tyuiu.MertsKV.Sprint7.Project.V13.Lib
                 Countries.Add(c);
             }
         }
+        
 
 
 
